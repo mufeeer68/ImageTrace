@@ -1,0 +1,40 @@
+{
+  "name": "imagetrace",
+  "version": "1.0.0",
+  "description": "A forensic tool for APU Final Year Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "image-trace"
+  ],
+  "author": "Deshad",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "jimp": "^0.9.3",
+    "nodemon": "^1.18.10",
+    "png-to-jpeg": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/haackker68/ImageTrace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haackker68/ImageTrace/issues"
+  },
+  "homepage": "https://github.com/haackker68/ImageTrace#readme"
+}
