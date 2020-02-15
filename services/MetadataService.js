@@ -9,9 +9,7 @@ export const getMetadata = async (req, res) => {
     let filePath = req.body.path;
     if (fs.existsSync(filePath)) {
       if (path.parse(filePath).ext == ".png") {
-        console.log(filePath);
         filePath = await convert(filePath);
-        console.log(filePath);
       }
       new ExifImage({ image: filePath }, function(error, exifData) {
         if (error) {
@@ -29,7 +27,7 @@ export const getMetadata = async (req, res) => {
   }
 };
 
-export const convert = async filePath => {
+const convert = async filePath => {
   let buffer = fs.readFileSync(filePath);
   filePath = filePath.slice(0, -3) + "jpeg";
   try {

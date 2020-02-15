@@ -1,4 +1,4 @@
-import { MetaDataService } from "../services";
+import { MetaDataService, ImageProcessingService } from "../services";
 const express = require("express");
 const path = require("path");
 const routes = express.Router();
@@ -9,7 +9,7 @@ var storage = multer.diskStorage({
     cb(null, "./uploads");
   },
   filename: function(req, file, cb) {
-    cb(null, "uploaded_image" + path.parse(file.originalname).ext);
+    cb(null, file.originalname);
   }
 });
 
@@ -17,6 +17,10 @@ var upload = multer({ storage: storage });
 
 routes.get("/", function(req, res) {
   res.render("index");
+});
+
+routes.get("/ela", function(req, res) {
+  res.render("elaIndex");
 });
 
 routes.post("/submit", upload.single("image"), (req, res, next) => {
@@ -31,4 +35,5 @@ routes.post("/submit", upload.single("image"), (req, res, next) => {
 });
 
 routes.post("/metadata", MetaDataService.getMetadata);
+routes.post("/imageprocessing", ImageProcessingService.processImage);
 module.exports = routes;
