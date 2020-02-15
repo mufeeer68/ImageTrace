@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon --exec babel-node index.js"
   },
   "keywords": [
     "image-trace"
@@ -18,8 +18,10 @@
     "csurf": "^1.11.0",
     "dotenv": "^7.0.0",
     "ejs": "^3.0.1",
+    "exif": "^0.6.0",
     "express": "^4.17.0",
     "multer": "^1.4.2",
+    "png-to-jpeg": "^1.0.1",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

@@ -118,7 +118,7 @@
         align-items: center;
         width: 1000px!important;
         transition: all 250ms ease-out;
-        height: 284px;
+        height: 130px;
       }
 
       .box:hover {
@@ -222,7 +222,7 @@
 
     <section style="padding: 50px; width: 100%; margin-bottom: 60px; padding-top: 0px!important"  class="container-boxes">
       <div class="box">
-        <form action="/submit" method="POST" enctype="multipart/form-data">
+        <form id="ImageSubmissionForm" enctype="multipart/form-data">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span style="margin-left: -8px!important;" class="input-group-text"></span>
@@ -239,9 +239,9 @@
                 >Choose file</label
               >
             </div>
-            <div class="col-md-12">
+            <!-- <div class="col-md-12">
               <div style="padding: 20px;" class="form-check">
-                <input name="streg" type="checkbox" class="form-check-input" id="stegnography">
+                <input name="stegnography" type="checkbox" class="form-check-input" id="stegnography">
                 <label style="color: black;" id='stegnography' class="form-check-label" for="exampleCheck1">Stegnography</label>
               </div>
               <div style="padding: 20px;" class="form-check">
@@ -251,18 +251,18 @@
               <div style="padding: 20px;" class="form-check">
                 <input name="extraction" type="checkbox" class="form-check-input" id="dataExtraction">
                 <label style="color: black;" class="form-check-label" for="exampleCheck1">Data Extraction With Location</label>
-              </div>
+              </div> -->
             </div>
-              <button type="submit" style="margin-left: 15px;" class="btn btn-primary">Submit</button>
+              <input type="submit" id ="enter" style="margin-left: 15px;" class="btn btn-primary" value="Process" />
           </div>
         </form>
       </div>
       </div>
     </section>
     <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script>
         $('#inputGroupFile01').on('change',function(){
@@ -270,7 +270,37 @@
             $(this).next('.custom-file-label').html(fileName);
         });
     </script>
-    <script>
-</script>
+    <script type="text/javascript">
+
+      $("#ImageSubmissionForm").submit(function (e) {
+      e.preventDefault();
+      var formData = new FormData(this);
+      $.ajax({
+          type: "POST",
+          url: "/submit",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(r){
+              $.ajax({
+                type: "POST",
+                url: "/metadata",
+                data: {path: r},
+                success: function(r){
+                  console.log("result 2",r)
+            
+                },
+                error: function (e) {
+                  console.log("some error", e);
+                }
+              });
+            },
+          error: function (e) {
+            console.log("some error", e);
+          }
+      });
+
+});
+    </script>
   </body>
 </html>

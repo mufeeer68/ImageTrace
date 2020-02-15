@@ -1,40 +1,12 @@
-import { MetaDataService } from "./services";
-
+import routes from "./routes";
 const express = require("express");
-const path = require("path");
 const app = express();
-const multer = require("multer");
-
+const bodyParser = require("body-parser");
 app.set("view engine", "ejs");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-var storage = multer.diskStorage({
-  destination: function(req, file, cb) {
-    cb(null, "./uploads");
-  },
-  filename: function(req, file, cb) {
-    cb(null, "uploaded_image" + path.parse(file.originalname).ext);
-  }
-});
-
-var upload = multer({ storage: storage });
-
-app.get("/", function(req, res) {
-  res.render("index");
-});
-
-app.post("/submit", upload.single("image"), (req, res, next) => {
-  const file = req.file;
-  if (!file) {
-    const error = new Error("Please upload a file");
-    error.httpStatusCode = 400;
-    return next(error);
-  }
-
-  const data = req.body;
-
-  res.send(data);
-});
-
+app.use(routes);
 app.listen(3000, function() {
   console.log("Example app listening on port 3000!");
 });
