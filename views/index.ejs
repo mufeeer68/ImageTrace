@@ -222,10 +222,10 @@
 
     <section style="padding: 50px; width: 100%; margin-bottom: 60px; padding-top: 0px!important"  class="container-boxes">
       <div class="box">
-        <form action="">
+        <form action="/submit" method="POST" enctype="multipart/form-data">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span style="margin-left: -8px!important;" class="input-group-text">Upload</span>
+              <span style="margin-left: -8px!important;" class="input-group-text"></span>
             </div>
             <div style="width: 992px;" class="custom-file">
               <input
@@ -233,6 +233,7 @@
                 type="file"
                 class="custom-file-input"
                 id="inputGroupFile01"
+                name="image"
               />
               <label class="custom-file-label" for="inputGroupFile01"
                 >Choose file</label
@@ -240,24 +241,36 @@
             </div>
             <div class="col-md-12">
               <div style="padding: 20px;" class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label style="color: black;" class="form-check-label" for="exampleCheck1">Stegnography</label>
+                <input name="streg" type="checkbox" class="form-check-input" id="stegnography">
+                <label style="color: black;" id='stegnography' class="form-check-label" for="exampleCheck1">Stegnography</label>
               </div>
               <div style="padding: 20px;" class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input name="processing" type="checkbox" class="form-check-input" id="imageProcessing">
                 <label style="color: black;" class="form-check-label" for="exampleCheck1">Image Processing</label>
               </div>
               <div style="padding: 20px;" class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input name="extraction" type="checkbox" class="form-check-input" id="dataExtraction">
                 <label style="color: black;" class="form-check-label" for="exampleCheck1">Data Extraction With Location</label>
               </div>
             </div>
-              <button style="margin-left: 15px;" class="btn btn-primary">Submit</button>
+              <button type="submit" style="margin-left: 15px;" class="btn btn-primary">Submit</button>
           </div>
         </form>
       </div>
       </div>
     </section>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $('#inputGroupFile01').on('change',function(){
+            var fileName = $(this).val();
+            $(this).next('.custom-file-label').html(fileName);
+        });
+    </script>
+    <script>
+</script>
   </body>
 </html>
