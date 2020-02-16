@@ -19,7 +19,7 @@
         margin: 0;
         padding: 0;
         background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-          url(https://images.unsplash.com/photo-1544195522-04e7c58ba945?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80)
+          url(https://www.logicforce.com/wp-content/uploads/2019/03/iStock-465716918-1.jpg)
             no-repeat;
         background-size: cover;
         color: black;
@@ -119,6 +119,8 @@
         width: 1000px!important;
         transition: all 250ms ease-out;
         height: 130px;
+        margin-bottom: 204px!important;
+        border-radius: 10px;
       }
 
       .box:hover {
@@ -225,9 +227,9 @@
         <form id="ImageSubmissionForm" enctype="multipart/form-data">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span style="margin-left: -8px!important;" class="input-group-text"></span>
+              <span style="" class="input-group-text"></span>
             </div>
-            <div style="width: 992px;" class="custom-file">
+            <div style="width: 992px; margin-right: 5px;" class="custom-file">
               <input
                 style="width: 755px;"
                 type="file"
@@ -235,7 +237,7 @@
                 id="inputGroupFile01"
                 name="image"
               />
-              <label class="custom-file-label" for="inputGroupFile01"
+              <label style="margin-right: 8px;" class="custom-file-label" for="inputGroupFile01"
                 >Choose file</label
               >
             </div>
@@ -253,12 +255,151 @@
                 <label style="color: black;" class="form-check-label" for="exampleCheck1">Data Extraction With Location</label>
               </div> -->
             </div>
-              <input type="submit" id ="enter" style="margin-left: 15px;" class="btn btn-primary" value="Process" />
+            <div style="display: flex; flex-direction: row; justify-content: center; align-content: center;">
+              <button type="submit" id ="enter" style="margin-left: 15px;" class="btn btn-primary" value="Process" >Submit</button>
+            </div>
           </div>
         </form>
       </div>
       </div>
     </section>
+    <div style="background-color: white; padding: 30px;" class="site-section">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                Featured
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">EXIF Data</h5>
+                <p class="card-text">You can check EXIF Data here.</p>
+               <ul id='data' style="padding-left: 0px!important;" class="data">
+                
+               </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                Featured
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">GPS Data</h5>
+                <p class="card-text">You can check GPS Data here.</p>
+               <ul id='data' style="padding-left: 0px!important;" class="dataGps">
+                
+               </ul>
+              </div>
+            </div>
+           </div>
+           <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                Featured
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">IMAGE Data</h5>
+                <p class="card-text">You can check Image Data here.</p>
+               <ul id='data' style="padding-left: 0px!important;" class="dataImage">
+
+               </ul>
+              </div>
+            </div>
+           </div>
+           
+           <div style="padding-top: 20px;" class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                Featured
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">interoperability Data</h5>
+                <p class="card-text">You can check interoperability Data here.</p>
+               <ul id='data' style="padding-left: 0px!important;" class="dataInteroperability">
+                
+               </ul>
+              </div>
+            </div>
+           </div> 
+           <div style="padding-top: 20px;" class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                Featured
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Thumbnail Data</h5>
+                <p class="card-text">You can check Thumbnail Data here.</p>
+               <ul id='data' style="padding-left: 0px!important;" class="dataThumbnail">
+                
+               </ul>
+              </div>
+            </div>
+           </div> 
+        </div>
+      </div>
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <!-- <div class="col-md-7">
+                  <h2 class="footer-heading mb-4">About Us</h2>
+                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+  
+                </div> -->
+                <!-- <div class="col-md-4 ml-auto">
+                  <h2 class="footer-heading mb-4">Features</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div> -->
+  
+              </div>
+            </div>
+            <div class="col-md-4 ml-auto">
+<!--   
+              <div class="mb-5">
+                <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
+                <form action="#" method="post" class="footer-suscribe-form">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control rounded-0 border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary text-white" type="button" id="button-addon2">Subscribe</button>
+                    </div>
+                  </div>
+              </div> -->
+  
+  
+              <!-- <h2 class="footer-heading mb-4">Follow Us</h2>
+              <a href="#about-section" class="smoothscroll pl-0 pr-3"><span class="icon-facebook"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a> -->
+              </form>
+            </div>
+          </div>
+          <div class="row pt-5 mt-5 text-center">
+            <div class="col-md-12">
+              <div class="pt-5">
+                <p class="small">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </footer>
+  
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -287,16 +428,126 @@
                 url: "/metadata",
                 data: {path: r},
                 success: function(r){
-                  console.log("result 2",r)
+                  console.log("result 2",r.exif.ApertureValue)
+                  $(".data").html(" ")
+                    $('.card-text').html(' ')
+                    $(".data").append(
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px"> ApertureValue: ' + r.exif.ApertureValue + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> Color Space: ' + r.exif.ColorSpace + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> CustomRendered: ' + r.exif.CustomRendered + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> DateTimeOriginal: ' + r.exif.DateTimeOriginal + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ExifImageHeight: ' + r.exif.ExifImageHeight + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ExifImageWidth: ' + r.exif.ExifImageWidth + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ExposureCompensation: ' + r.exif.ExposureCompensation + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ExposureMode: ' + r.exif.ExposureMode + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ExposureProgram: ' + r.exif.ExposureProgram + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ExposureTime: ' + r.exif.ExposureTime + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> FNumber: ' + r.exif.FNumber + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> Flash: ' + r.exif.Flash + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> FocalLength: ' + r.exif.FocalLength + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> FocalPlaneResolutionUnit: ' + r.exif.FocalPlaneResolutionUnit + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> FocalPlaneXResolution: ' + r.exif.FocalPlaneXResolution + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> FocalPlaneYResolution: ' + r.exif.FocalPlaneYResolution + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ISO: ' + r.exif.ISO + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> InteropOffset: ' + r.exif.InteropOffset + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> MeteringMode: ' + r.exif.MeteringMode + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> SceneCaptureType: ' + r.exif.SceneCaptureType + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ShutterSpeedValue: ' + r.exif.ShutterSpeedValue + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> SubSecTime: ' + r.exif.SubSecTime + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> SubSecTimeDigitized: ' + r.exif.SubSecTimeDigitized + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> SubSecTimeOriginal: ' + r.exif.SubSecTimeOriginal + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> SubSecTimeOriginal: ' + r.exif.WhiteBalance + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ComponentsConfigurationType: ' + r.exif.ComponentsConfiguration.type + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ComponentsConfiguration: ' + r.exif.ComponentsConfiguration.data[0] + ' '+ r.exif.ComponentsConfiguration.data[1] +' '+ r.exif.ComponentsConfiguration.data[2] +' '+ r.exif.ComponentsConfiguration.data[3] + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ComponentsConfigurationType: ' + r.exif.ExifVersion.type + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> ComponentsConfiguration: ' + r.exif.ExifVersion.data[0] + ' '+ r.exif.ExifVersion.data[1] +' '+ r.exif.ExifVersion.data[2] +' '+ r.exif.ExifVersion.data[3] + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> FlashpixVersion: ' + r.exif.FlashpixVersion.type + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> FlashpixVersion: ' + r.exif.FlashpixVersion.data[0] + ' '+ r.exif.FlashpixVersion.data[1] +' '+ r.exif.FlashpixVersion.data[2] +' '+ r.exif.FlashpixVersion.data[3] + '</p>',
+                    '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> FlashpixVersion: ' + r.exif.UserComment.type + '</p>',
+                    )
+              
+
+                  $(".dataGps").html(" ")
+                  if(r.gps) {
+                    $('.card-text').html(' ')
+                    $('.dataGps').append(
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  GPSAltitudeRef: ' + r.gps.GPSAltitudeRef + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSDateStamp: ' + r.gps.GPSDateStamp + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLatitudeRef: ' + r.gps.GPSLatitudeRef + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSDatGPSImgDirectionRefeStamp: ' + r.gps.GPSImgDirectionRef + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLongitudeRef: ' + r.gps.GPSLongitudeRef + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSSatellites: ' + r.gps.GPSSatellites + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLatitude: ' + r.gps.GPSLatitude[0] + ' '+ r.gps.GPSLatitude[1] +' '+ r.gps.GPSLatitude[2]  + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLongitude: ' + r.gps.GPSLongitude[0] + ' '+ r.gps.GPSLongitude[1] +' '+ r.gps.GPSLongitude[2] + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSTimeStamp: ' + r.gps.GPSTimeStamp[0] + ' '+ r.gps.GPSTimeStamp[1] +' '+ r.gps.GPSTimeStamp[2] + '</p>',
+
+                    )
+                  }
+
+                  $(".dataImage").html(" ")
+                  if(r.image) {
+                    $('.card-text').html(' ')
+                    $('.dataImage').append(
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ExifOffset: ' + r.image.ExifOffset + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  GPSInfo: ' + r.image.GPSInfo + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ImageDescription: ' + r.image.ImageDescription + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  Make: ' + r.image.Make + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  Model: ' + r.image.Model + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ModifyDate: ' + r.image.ModifyDate + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  Orientation: ' + r.image.Orientation + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ResolutionUnit: ' + r.image.ResolutionUnit + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  Software: ' + r.image.Software + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  XResolution: ' + r.image.XResolution + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  YCbCrPositioning: ' + r.image.YCbCrPositioning + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  YResolution: ' + r.image.YResolution + '</p>',
+                    )
+                  }
+                  $(".dadataInteroperabilityta").html(" ")
+                  if(r.interoperability) {
+                    $('.dataInteroperability').append(
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ExifOffset: ' + r.interoperability.InteropIndex + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  GPSInfo: ' + r.interoperability.InteropVersion.type + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  GPSInfo: ' + r.interoperability.InteropVersion.data[0] + ' '+ r.interoperability.InteropVersion.data[1] +' '+ r.interoperability.InteropVersion.data[2] +' '+ r.interoperability.InteropVersion.data[3] +'</p>',
+                    )
+                  }
+
+                  if (r.thumbnail) {
+                    $(".dataThumbnail").html(" ")
+                      $('.card-text').html(' ')
+                      $('.dataThumbnail').append(
+                        '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ExifOffset: ' + r.thumbnail.Compression + '</p>',
+                        '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ExifOffset: ' + r.thumbnail.ResolutionUnit + '</p>',
+                        '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ExifOffset: ' + r.thumbnail.ThumbnailLength + '</p>',
+                        '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ExifOffset: ' + r.thumbnail.ThumbnailOffset + '</p>',
+                        '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ExifOffset: ' + r.thumbnail.XResolution + '</p>',
+                        '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ExifOffset: ' + r.thumbnail.YResolution + '</p>',
+                      )
+                  }
             
                 },
                 error: function (e) {
-                  console.log("some error", e);
+                  $('p').html(' ')
+                  $('p').html(' ')
+                  $('ul').html(' ')
+                  $('li').html(' ')
+                  $('#data').html(' ')
+                  $('.card-text').html(' ')
+                  $('.card-text').append(
+                    '<p style="color: red;background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">' + 'Sorry No Data Found' + '</p>',
+                  )
                 }
               });
             },
           error: function (e) {
-            console.log("some error", e);
+            $('p').html(' ')
+                  $('#data').html(' ')
+                  $('p').html(' ')
+                  $('ul').html(' ')
+                  $('li').html(' ')
+                  $('.card-text').html(' ')
+                  $('.card-text').append(
+                    '<p style="color: red;background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">' + 'Sorry No Data Found' + '</p>',
+                  )
           }
       });
 
