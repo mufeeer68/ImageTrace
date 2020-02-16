@@ -465,24 +465,7 @@
                     '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> FlashpixVersion: ' + r.exif.FlashpixVersion.data[0] + ' '+ r.exif.FlashpixVersion.data[1] +' '+ r.exif.FlashpixVersion.data[2] +' '+ r.exif.FlashpixVersion.data[3] + '</p>',
                     '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> FlashpixVersion: ' + r.exif.UserComment.type + '</p>',
                     )
-              
-
-                  $(".dataGps").html(" ")
-                  if(r.gps) {
-                    $('.card-text').html(' ')
-                    $('.dataGps').append(
-                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  GPSAltitudeRef: ' + r.gps.GPSAltitudeRef + '</p>',
-                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSDateStamp: ' + r.gps.GPSDateStamp + '</p>',
-                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLatitudeRef: ' + r.gps.GPSLatitudeRef + '</p>',
-                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSDatGPSImgDirectionRefeStamp: ' + r.gps.GPSImgDirectionRef + '</p>',
-                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLongitudeRef: ' + r.gps.GPSLongitudeRef + '</p>',
-                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSSatellites: ' + r.gps.GPSSatellites + '</p>',
-                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLatitude: ' + r.gps.GPSLatitude[0] + ' '+ r.gps.GPSLatitude[1] +' '+ r.gps.GPSLatitude[2]  + '</p>',
-                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLongitude: ' + r.gps.GPSLongitude[0] + ' '+ r.gps.GPSLongitude[1] +' '+ r.gps.GPSLongitude[2] + '</p>',
-                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSTimeStamp: ' + r.gps.GPSTimeStamp[0] + ' '+ r.gps.GPSTimeStamp[1] +' '+ r.gps.GPSTimeStamp[2] + '</p>',
-
-                    )
-                  }
+            
 
                   $(".dataImage").html(" ")
                   if(r.image) {
@@ -522,6 +505,25 @@
                         '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ExifOffset: ' + r.thumbnail.XResolution + '</p>',
                         '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  ExifOffset: ' + r.thumbnail.YResolution + '</p>',
                       )
+                  }
+
+                  $(".dataGps").html(" ")
+                  var validate = r.gps
+                  if(validate) {
+                    console.log('hello')
+                    $('.card-text').html(' ')
+                    $('.dataGps').append(
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">  GPSAltitudeRef: ' + r.gps.GPSAltitudeRef + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSDateStamp: ' + r.gps.GPSDateStamp + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLatitudeRef: ' + r.gps.GPSLatitudeRef + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSDatGPSImgDirectionRefeStamp: ' + r.gps.GPSImgDirectionRef + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLongitudeRef: ' + r.gps.GPSLongitudeRef + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSSatellites: ' + r.gps.GPSSatellites + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLatitude: ' + r.gps.GPSLatitude[0] + ' '+ r.gps.GPSLatitude[1] +' '+ r.gps.GPSLatitude[2]  + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSLongitude: ' + r.gps.GPSLongitude[0] + ' '+ r.gps.GPSLongitude[1] +' '+ r.gps.GPSLongitude[2] + '</p>',
+                      '<p style="background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;"> GPSTimeStamp: ' + r.gps.GPSTimeStamp[0] + ' '+ r.gps.GPSTimeStamp[1] +' '+ r.gps.GPSTimeStamp[2] + '</p>',
+
+                    )
                   }
             
                 },
