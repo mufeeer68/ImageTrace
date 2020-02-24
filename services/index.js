@@ -5,5 +5,6 @@
  */
 
 module.exports = {
-  MetaDataService: require("./MetadataService")
+  MetaDataService: require("./MetadataService"),
+  ImageProcessingService: require("./ImageProcessingService")
 };

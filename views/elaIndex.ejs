@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Yarn Over</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url(https://www.logicforce.com/wp-content/uploads/2019/03/iStock-465716918-1.jpg)
+            no-repeat;
+        background-size: cover;
+        color: black;
+        font-family: "open sans";
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* ------------------------ NAVBAR ----------------*/
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      header div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Pacifico;
+        margin: 0 2rem;
+      }
+
+      header div i {
+        font-size: 2rem;
+        margin: 1rem;
+      }
+
+      header nav {
+        padding: 1rem 2rem;
+      }
+
+      nav ul li {
+        list-style: none;
+        display: inline;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 5px;
+      }
+
+      nav li a {
+        padding: 1rem;
+        margin: 1rem;
+        text-decoration: none;
+        color: white;
+        transition: all 250ms ease-in;
+      }
+
+      nav li a:hover {
+        background: rgba(255, 255, 255, 0.3);
+        color: black;
+      }
+
+      /* ------------------------ TOP SECTION ----------------*/
+
+      .titles {
+        color: white;
+        text-align: center;
+        width: 50vw;
+        margin: 0 auto;
+      }
+
+      .titles h1 {
+        font-family: Pacifico;
+        font-size: 5rem;
+        margin-bottom: 0;
+        text-shadow: 1px 1px 0 black;
+      }
+
+      .titles p {
+        letter-spacing: 3px;
+        text-shadow: 1px 1px 0 black;
+      }
+
+      /* ------------------------ BOT SECTION ----------------*/
+
+      .container-boxes {
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        max-width: 80vw;
+      }
+
+      .box {
+        background: rgba(255, 255, 255, 0.7);
+        margin: 1rem;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1000px!important;
+        transition: all 250ms ease-out;
+        height: 130px;
+        margin-bottom: 204px!important;
+        border-radius: 10px;
+      }
+
+      .box:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-20%);
+      }
+
+      .box a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .icon {
+        font-size: 3rem;
+        padding: 1rem;
+      }
+
+      .text h3 {
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 0;
+      }
+
+      .text p {
+        margin-top: 1rem;
+        line-height: 1.5rem;
+        text-align: left;
+      }
+
+      .text {
+        padding: 0.5rem;
+      }
+
+      /* MEDIAQUERIES */
+
+      @media (max-width: 1160px) {
+        .icon {
+          font-size: 2rem;
+          padding: 0.5rem;
+        }
+        .text h3 {
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          margin-bottom: 0;
+          font-size: 1rem;
+        }
+
+        .text p {
+          margin-top: 1rem;
+          line-height: 1.5rem;
+          text-align: left;
+          font-size: 0.8rem;
+        }
+        nav li a:hover {
+          background: none;
+          color: black;
+        }
+      }
+
+      @media (max-width: 850px) {
+        body {
+          height: 100%;
+        }
+        .container-boxes {
+          flex-direction: column;
+        }
+        .box:hover {
+          background: rgba(255, 255, 255, 0.7);
+          transform: none;
+        }
+        .titles h1 {
+          font-size: 3rem;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <i class="fas fa-atom"></i>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Data Extraction</a></li>
+          <li><a href="/ela">Image Processing</a></li>
+          <li><a href="/stegno">Stegnography</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="titles">
+      <h1>IMAGE TRACE</h1>
+      <p>
+        Error Level Analysis Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam maiores
+        consectetur, laboriosam rerum obcaecati.
+      </p>
+    </section>
+
+    <section style="padding: 50px; width: 100%; margin-bottom: 60px; padding-top: 0px!important"  class="container-boxes">
+      <div class="box">
+        <form id="ImageSubmissionForm" enctype="multipart/form-data">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span style="" class="input-group-text"></span>
+            </div>
+            <div style="width: 992px; margin-right: 5px;" class="custom-file">
+              <input
+                style="width: 755px;"
+                type="file"
+                class="custom-file-input"
+                id="inputGroupFile01"
+                name="image"
+              />
+              <label style="margin-right: 8px;" class="custom-file-label" for="inputGroupFile01"
+                >Choose file</label
+              >
+            </div>
+            <!-- <div class="col-md-12">
+              <div style="padding: 20px;" class="form-check">
+                <input name="stegnography" type="checkbox" class="form-check-input" id="stegnography">
+                <label style="color: black;" id='stegnography' class="form-check-label" for="exampleCheck1">Stegnography</label>
+              </div>
+              <div style="padding: 20px;" class="form-check">
+                <input name="processing" type="checkbox" class="form-check-input" id="imageProcessing">
+                <label style="color: black;" class="form-check-label" for="exampleCheck1">Image Processing</label>
+              </div>
+              <div style="padding: 20px;" class="form-check">
+                <input name="extraction" type="checkbox" class="form-check-input" id="dataExtraction">
+                <label style="color: black;" class="form-check-label" for="exampleCheck1">Data Extraction With Location</label>
+              </div> -->
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: center; align-content: center;">
+              <button type="submit" id ="enter" style="margin-left: 15px;" class="btn btn-primary" value="Process" >Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      </div>
+    </section>
+    <div style="background-color: white; padding: 30px;" class="site-section">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                Featured
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">EXIF Data</h5>
+                <p class="card-text">You can check EXIF Data here.</p>
+               <ul id='data' style="padding-left: 0px!important;" class="data">
+                
+               </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                Negative
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">GPS Data</h5>
+                <p class="card-text">You can check GPS Data here.</p>
+               <ul id='data' style="padding-left: 0px!important;" class="dataGps">
+                
+               </ul>
+              </div>
+            </div>
+           </div>
+           <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                Greyscale
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">IMAGE Data</h5>
+                <p class="card-text">You can check Image Data here.</p>
+               <ul id='data' style="padding-left: 0px!important;" class="dataImage">
+
+               </ul>
+              </div>
+            </div>
+           </div>
+           
+           <div style="padding-top: 20px;" class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                Threshold
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">interoperability Data</h5>
+                <p class="card-text">You can check interoperability Data here.</p>
+               <ul id='data' style="padding-left: 0px!important;" class="dataInteroperability">
+                
+               </ul>
+              </div>
+            </div>
+           </div> 
+           <div style="padding-top: 20px;" class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                RGB
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Thumbnail Data</h5>
+                <p class="card-text">You can check Thumbnail Data here.</p>
+               <ul id='data' style="padding-left: 0px!important;" class="dataThumbnail">
+                
+               </ul>
+              </div>
+            </div>
+           </div> 
+        </div>
+      </div>
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <!-- <div class="col-md-7">
+                  <h2 class="footer-heading mb-4">About Us</h2>
+                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+  
+                </div> -->
+                <!-- <div class="col-md-4 ml-auto">
+                  <h2 class="footer-heading mb-4">Features</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div> -->
+  
+              </div>
+            </div>
+            <div class="col-md-4 ml-auto">
+<!--   
+              <div class="mb-5">
+                <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
+                <form action="#" method="post" class="footer-suscribe-form">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control rounded-0 border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary text-white" type="button" id="button-addon2">Subscribe</button>
+                    </div>
+                  </div>
+              </div> -->
+  
+  
+              <!-- <h2 class="footer-heading mb-4">Follow Us</h2>
+              <a href="#about-section" class="smoothscroll pl-0 pr-3"><span class="icon-facebook"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a> -->
+              </form>
+            </div>
+          </div>
+          <div class="row pt-5 mt-5 text-center">
+            <div class="col-md-12">
+              <div class="pt-5">
+                <p class="small">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </footer>
+  
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $('#inputGroupFile01').on('change',function(){
+            var fileName = $(this).val();
+            $(this).next('.custom-file-label').html(fileName);
+        });
+    </script>
+  <script type="text/javascript">
+
+    $("#ImageSubmissionForm").submit(function (e) {
+    e.preventDefault();
+    var formData = new FormData(this);
+    $.ajax({
+        type: "POST",
+        url: "/submit",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(r){
+            $.ajax({
+              type: "POST",
+              url: "/imageprocessing",
+              data: {path: r},
+              success: function(r){
+                console.log("result 2",r)
+          
+              },
+              error: function (e) {
+                console.log("some error", e);
+              }
+            });
+          },
+        error: function (e) {
+          console.log("some error", e);
+        }
+    });
+
+});
+  </script>
+  </body>
+</html>

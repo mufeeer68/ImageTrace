@@ -23,6 +23,10 @@ routes.get("/ela", function(req, res) {
   res.render("elaIndex");
 });
 
+routes.get("/stegno", function(req, res) {
+  res.render("stegnoIndex");
+});
+
 routes.post("/submit", upload.single("image"), (req, res, next) => {
   const file = req.file;
   if (!file) {
