@@ -3,10 +3,12 @@ const path = require("path");
 const pngToJpeg = require("png-to-jpeg");
 const Jimp = require("jimp");
 const gm = require("gm");
-import { pdfsaver } from "./../utils/PdfSaver";
+
 export const processImage = async (req, res) => {
   try {
     let filePath = req.body.path;
+    let extension = path.parse(filePath).ext;
+
     if (fs.existsSync(filePath)) {
       await convertToNegative(filePath);
       await convertToGreyscale(filePath);
@@ -14,7 +16,25 @@ export const processImage = async (req, res) => {
       await convertToGreen(filePath);
       await convertToBlue(filePath);
       await convertThreshold(filePath);
-      await pdfsaver();
+
+      let returnPaths = [
+        [
+          "negative",
+          filePath.slice(0, -extension.length) + "_negative" + extension
+        ],
+        [
+          "greyscale",
+          filePath.slice(0, -extension.length) + "_greyscale" + extension
+        ],
+        ["red", filePath.slice(0, -extension.length) + "_red" + extension],
+        ["green", filePath.slice(0, -extension.length) + "_green" + extension],
+        ["blue", filePath.slice(0, -extension.length) + "_blue" + extension],
+        [
+          "threshold",
+          filePath.slice(0, -extension.length) + "_threshold" + extension
+        ]
+      ];
+      res.status(200).send(returnPaths);
       //   await convertThreshold(filePath);
     } else {
       res.status(500).send("File not saved in directory");
