@@ -3,7 +3,7 @@ const path = require("path");
 const pngToJpeg = require("png-to-jpeg");
 const Jimp = require("jimp");
 const gm = require("gm");
-
+import { pdfsaver } from "./../utils/PdfSaver";
 export const processImage = async (req, res) => {
   try {
     let filePath = req.body.path;
@@ -13,7 +13,8 @@ export const processImage = async (req, res) => {
       await convertToRed(filePath);
       await convertToGreen(filePath);
       await convertToBlue(filePath);
-
+      await convertThreshold(filePath);
+      await pdfsaver();
       //   await convertThreshold(filePath);
     } else {
       res.status(500).send("File not saved in directory");
@@ -114,6 +115,29 @@ const convertToBlue = async filePath => {
         image.writeAsync(
           filePath.slice(0, -extension.length) + "_blue" + extension
         ); // Returns Promise
+      })
+      .catch(err => {
+        console.log("Error: " + err.message);
+        // Handle an exception.
+      });
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
+const convertThreshold = async filePath => {
+  let extension = path.parse(filePath).ext;
+
+  try {
+    Jimp.read(filePath)
+      .then(image => {
+        image
+          .quality(60) // set JPEG quality
+          .greyscale() // set greyscale
+          .contrast(1)
+          .writeAsync(
+            filePath.slice(0, -extension.length) + "_threshold" + extension
+          ); // Returns Promise
       })
       .catch(err => {
         console.log("Error: " + err.message);
