@@ -217,7 +217,7 @@
     <section class="titles">
       <h1>IMAGE TRACE</h1>
       <p>
-        "Error Level Analysis"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam maiores
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam maiores
         consectetur, laboriosam rerum obcaecati.
       </p>
     </section>
@@ -227,9 +227,9 @@
         <form id="ImageSubmissionForm" enctype="multipart/form-data">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span style="margin-left: -8px!important;" class="input-group-text"></span>
+              <span style="" class="input-group-text"></span>
             </div>
-            <div style="width: 992px;" class="custom-file">
+            <div style="width: 992px; margin-right: 5px;" class="custom-file">
               <input
                 style="width: 755px;"
                 type="file"
@@ -237,11 +237,27 @@
                 id="inputGroupFile01"
                 name="image"
               />
-              <label class="custom-file-label" for="inputGroupFile01"
+              <label style="margin-right: 8px;" class="custom-file-label" for="inputGroupFile01"
                 >Choose file</label
               >
             </div>
-               <input type="submit" id ="enter" style="margin-left: 15px;" class="btn btn-primary" value="Process" />
+            <!-- <div class="col-md-12">
+              <div style="padding: 20px;" class="form-check">
+                <input name="stegnography" type="checkbox" class="form-check-input" id="stegnography">
+                <label style="color: black;" id='stegnography' class="form-check-label" for="exampleCheck1">Stegnography</label>
+              </div>
+              <div style="padding: 20px;" class="form-check">
+                <input name="processing" type="checkbox" class="form-check-input" id="imageProcessing">
+                <label style="color: black;" class="form-check-label" for="exampleCheck1">Image Processing</label>
+              </div>
+              <div style="padding: 20px;" class="form-check">
+                <input name="extraction" type="checkbox" class="form-check-input" id="dataExtraction">
+                <label style="color: black;" class="form-check-label" for="exampleCheck1">Data Extraction With Location</label>
+              </div> -->
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: center; align-content: center;">
+              <button type="submit" id ="enter" style="margin-left: 15px;" class="btn btn-primary" value="Process" >Submit</button>
+            </div>
           </div>
         </form>
       </div>
@@ -260,7 +276,7 @@
     </script>
     <script type="text/javascript">
 
-      $("#ImageSubmissionForm").submit(function (e) {
+$("#ImageSubmissionForm").submit(function (e) {
       e.preventDefault();
       var formData = new FormData(this);
       $.ajax({
@@ -272,11 +288,22 @@
           success: function(r){
               $.ajax({
                 type: "POST",
-                url: "/imageprocessing",
+                url: "/stegnography",
+                data: {path: r},
+                success: function(r){
+
+                  $.ajax({
+                type: "POST",
+                url: "/stegnofinder",
                 data: {path: r},
                 success: function(r){
                   console.log("result 2",r)
             
+                },
+                error: function (e) {
+                  console.log("some error", e);
+                }
+              });
                 },
                 error: function (e) {
                   console.log("some error", e);

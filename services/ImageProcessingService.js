@@ -18,21 +18,12 @@ export const processImage = async (req, res) => {
       await convertThreshold(filePath);
 
       let returnPaths = [
-        [
-          "negative",
-          filePath.slice(0, -extension.length) + "_negative" + extension
-        ],
-        [
-          "greyscale",
-          filePath.slice(0, -extension.length) + "_greyscale" + extension
-        ],
-        ["red", filePath.slice(0, -extension.length) + "_red" + extension],
-        ["green", filePath.slice(0, -extension.length) + "_green" + extension],
-        ["blue", filePath.slice(0, -extension.length) + "_blue" + extension],
-        [
-          "threshold",
-          filePath.slice(0, -extension.length) + "_threshold" + extension
-        ]
+        filePath.slice(0, -extension.length) + "_negative" + extension,
+        filePath.slice(0, -extension.length) + "_greyscale" + extension,
+        filePath.slice(0, -extension.length) + "_red" + extension,
+        filePath.slice(0, -extension.length) + "_green" + extension,
+        filePath.slice(0, -extension.length) + "_blue" + extension,
+        filePath.slice(0, -extension.length) + "_threshold" + extension
       ];
       res.status(200).send(returnPaths);
       //   await convertThreshold(filePath);
