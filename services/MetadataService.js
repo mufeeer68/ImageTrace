@@ -2,7 +2,7 @@ const ExifImage = require("exif").ExifImage;
 const fs = require("fs");
 const path = require("path");
 const pngToJpeg = require("png-to-jpeg");
-
+import { pdfsaver } from "./../utils/PdfSaver";
 export const getMetadata = async (req, res) => {
   try {
     // console.log(req);
@@ -15,6 +15,7 @@ export const getMetadata = async (req, res) => {
         if (error) {
           res.status(500).send(error.message);
         }
+        pdfsaver(exifData);
         res.send(exifData);
       });
     } else {

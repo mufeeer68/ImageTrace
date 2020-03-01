@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 7px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+
+</style>
+
+        <mate charest="utf-8" />
+        <title>Extracted Data!</title>
+    
+</head>
+<body>
+<div>
+<table id="t01">
+{{#if exif}}            
+   <th>Exif Information</th>
+     <tr>
+        <td>ExifImageWidth</td>
+        <td>{{exif.ExifImageWidth}}</td>
+    </tr>
+    <tr>
+        <td>ExifImageHeight</td>
+        <td>{{exif.ExifImageHeight}}</td>
+    </tr>
+    <tr>
+        <td>ISO</td>
+        <td>{{exif.ISO}}</td>
+    </tr>
+    <tr>
+        <td>DateTimeOriginal</td>
+        <td>{{exif.DateTimeOriginal}}</td>
+    </tr>
+    <tr>
+        <td>CreateDate</td>
+        <td>{{exif.CreateDate}}</td>
+    </tr>
+       <tr>
+        <td>MeteringMode</td>
+        <td>{{exif.MeteringMode}}</td>
+    </tr>
+     <tr>
+        <td>LightSource</td>
+        <td>{{exif.LightSource}}</td>
+    </tr>
+     <tr>
+        <td>Flash</td>
+        <td>{{exif.Flash}}</td>
+    </tr>
+     <tr>
+        <td>FNumber</td>
+        <td>{{exif.FNumber}}</td>
+    </tr>
+        <tr>
+        <td>Contrast</td>
+        <td>{{exif.Contrast}}</td>
+    </tr>
+     <tr>
+        <td>Saturation</td>
+        <td>{{exif.Saturation}}</td>
+    </tr>
+    <tr>
+        <td>Sharpness</td>
+        <td>{{exif.Sharpness}}</td>
+    </tr> <tr>
+        <td>WhiteBalance</td>
+        <td>{{exif.WhiteBalance}}</td>
+    </tr>
+    <tr>
+        <td>ExposureMode</td>
+        <td>{{exif.ExposureMode}}</td>
+    </tr> 
+      <tr>
+        <td>ExposureTime</td>
+        <td>{{exif.ExposureTime}}</td>
+    </tr>
+      <tr>
+        <td>ExposureProgram</td>
+        <td>{{exif.ExposureProgram}}</td>
+    </tr>
+     <tr>
+        <td>ExposureCompensation</td>
+        <td>{{exif.ExposureCompensation}}</td>
+    </tr>
+     <tr>
+        <td>MaxApertureValue</td>
+        <td>{{exif.MaxApertureValue}}</td>
+    </tr>
+     <tr>
+        <td>DigitalZoomRatio</td>
+        <td>{{exif.DigitalZoomRatio}}</td>
+    </tr>
+    <tr>
+        <td>FocalLengthIn35mmFormat</td>
+        <td>{{exif.FocalLengthIn35mmFormat}}</td>
+    </tr>
+{{/if}}
+{{#if image}}            
+   <th>Image Information</th>
+    <tr>
+        <td>Make</td>
+        <td>{{image.Make}}</td>
+    </tr>
+    <tr>
+        <td>Model</td>
+        <td>{{image.Model}}</td>
+    </tr>
+    <tr>
+        <td>Software</td>
+        <td>{{image.Software}}</td>
+    </tr>
+     <tr>
+        <td>ImageDescription</td>
+        <td>{{image.ImageDescription}}</td>
+    </tr>
+     <tr>
+        <td>ModifyDate</td>
+        <td>{{image.ModifyDate}}</td>
+    </tr>
+     <tr>
+        <td>Orientation</td>
+        <td>{{image.Orientation}}</td>
+    </tr>
+     <tr>
+        <td>XResolution</td>
+        <td>{{image.XResolution}}</td>
+    </tr>
+     <tr>
+        <td>YResolution</td>
+        <td>{{image.YResolution}}</td>
+    </tr>
+     <tr>
+        <td>ExifOffSet</td>
+        <td>{{image.ExifOffset}}</td>
+    </tr>
+     <tr>
+        <td>YCbCrPositioning</td>
+        <td>{{image.YCbCrPositioning}}</td>
+    </tr>
+     <tr>
+        <td>GPSInfo</td>
+        <td>{{image.GPSInfo}}</td>
+    </tr>
+     <tr>
+        <td>ResolutionUnit</td>
+        <td>{{image.ResolutionUnit}}</td>
+    </tr>
+    
+{{/if}}  
+{{#if thumbnail}}            
+   <th>Thumbnail Information</th>
+
+    <tr>
+        <td>Compression</td>
+        <td>{{thumbnail.Compression}}</td>
+    </tr>
+    <tr>
+        <td>XResolution</td>
+        <td>{{thumbnail.XResolution}}</td>
+    </tr>
+    <tr>
+        <td>YResolution</td>
+        <td>{{thumbnail.YResolution}}</td>
+    </tr>
+     <tr>
+        <td>ResolutionUnit</td>
+        <td>{{thumbnail.ResolutionUnit}}</td>
+    </tr>
+     <tr>
+        <td>ThumbnailOffset</td>
+        <td>{{thumbnail.ThumbnailOffset}}</td>
+    </tr>
+     <tr>
+        <td>ThumbnailLength</td>
+        <td>{{thumbnail.ThumbnailLength}}</td>
+    </tr>
+{{/if}}  
+{{#if gps}}            
+   <th>Gps Information</th>
+    <tr>
+        <td>GPSLatitudeRef</td>
+        <td>{{gps.GPSLatitudeRef}}</td>
+    </tr>
+    <tr>
+        <td>GPSLatitude</td>
+        <td>{{gps.GPSLatitude}}</td>
+    </tr>
+    <tr>
+        <td>GPSLongitudeRef</td>
+        <td>{{gps.GPSLongitudeRef}}</td>
+    </tr>
+     <tr>
+        <td>GPSAltitudeRef</td>
+        <td>{{gps.GPSAltitudeRef}}</td>
+    </tr>
+     <tr>
+        <td>GPSSatellites</td>
+        <td>{{gps.GPSSatellites}}</td>
+    </tr>
+     <tr>
+        <td>GPSImgDirectionRef</td>
+        <td>{{gps.GPSImgDirectionRef}}</td>
+    </tr>
+     <tr>
+        <td>GPSMapDatum</td>
+        <td>{{gps.GPSMapDatum}}</td>
+    </tr>
+     <tr>
+        <td>GPSDateStamp</td>
+        <td>{{gps.GPSDateStamp}}</td>
+    </tr>
+     <tr>
+        <td>GPSTimeStamp</td>
+        <td>{{gps.GPSTimeStamp}}</td>
+    </tr>
+{{/if}}  
+     
+</table>
+</div>
+</body>
+</html>

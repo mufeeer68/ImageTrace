@@ -3,12 +3,12 @@ import {
   ImageProcessingService,
   StegnographyService
 } from "../services";
-// import { clearDirectory } from "../utils/FileRemover";
 const express = require("express");
 const path = require("path");
 const routes = express.Router();
 const multer = require("multer");
 const fsExtra = require("fs-extra");
+const fs = require("fs");
 
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -28,7 +28,7 @@ routes.get("/", function(req, res) {
 });
 
 routes.get("/ela", function(req, res) {
-  fsExtra.emptyDirSync("uploads");
+  // fsExtra.emptyDirSync("uploads");
   res.render("elaIndex");
 });
 
@@ -46,6 +46,16 @@ routes.post("/submit", upload.single("image"), (req, res, next) => {
   }
 
   res.send(file.path);
+});
+
+routes.get("/exifpdf", function(req, res) {
+  // fsExtra.emptyDirSync("uploads");
+  let filePath = "uploads/exif.pdf";
+  if (fs.existsSync(filePath)) {
+    res.status(200).send("exif.pdf");
+  } else {
+    res.status(500).send("Pdf doesnt exist");
+  }
 });
 
 routes.post("/metadata", MetaDataService.getMetadata);
