@@ -268,77 +268,92 @@
     <div style="background-color: white; padding: 30px;" class="site-section">
       <div class="container">
         <div class="row align-items-stretch">
-          <div class="col-lg-4">
-            <div class="card">
-              <div class="card-header">
-                Featured
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">EXIF Data</h5>
-                <p class="card-text">You can check EXIF Data here.</p>
-               <ul id='data' style="padding-left: 0px!important;" class="data">
-                
-               </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
+          <div class="col-md-6">
             <div class="card">
               <div class="card-header">
                 Negative
               </div>
               <div class="card-body">
-                <h5 class="card-title">GPS Data</h5>
-                <p class="card-text">You can check GPS Data here.</p>
-               <ul id='data' style="padding-left: 0px!important;" class="dataGps">
+                 <ul id='data' style="padding-left: 0px!important;" class="neg">
                 
                </ul>
               </div>
             </div>
            </div>
-           <div class="col-lg-4">
+           <div style="" class="col-md-6">
             <div class="card">
               <div class="card-header">
                 Greyscale
               </div>
               <div class="card-body">
-                <h5 class="card-title">IMAGE Data</h5>
-                <p class="card-text">You can check Image Data here.</p>
-               <ul id='data' style="padding-left: 0px!important;" class="dataImage">
+               <ul id='data' style="padding-left: 0px!important;" class="gray">
 
                </ul>
               </div>
             </div>
            </div>
            
-           <div style="padding-top: 20px;" class="col-lg-4">
+           <div style="padding-top: 20px;" class="col-md-6">
             <div class="card">
               <div class="card-header">
                 Threshold
               </div>
               <div class="card-body">
-                <h5 class="card-title">interoperability Data</h5>
-                <p class="card-text">You can check interoperability Data here.</p>
-               <ul id='data' style="padding-left: 0px!important;" class="dataInteroperability">
+               <ul id='data' style="padding-left: 0px!important;" class="the">
                 
                </ul>
               </div>
             </div>
            </div> 
-           <div style="padding-top: 20px;" class="col-lg-4">
+           <div style="padding-top: 20px;" class="col-md-6">
             <div class="card">
               <div class="card-header">
-                RGB
+                Red
               </div>
               <div class="card-body">
-                <h5 class="card-title">Thumbnail Data</h5>
-                <p class="card-text">You can check Thumbnail Data here.</p>
-               <ul id='data' style="padding-left: 0px!important;" class="dataThumbnail">
+               
+                <ul id='data' style="padding-left: 0px!important;" class="red">
                 
                </ul>
               </div>
             </div>
            </div> 
+           <div style="padding-top:20px" class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                Green
+              </div>
+              <div class="card-body">
+               <ul id='data' style="padding-left: 0px!important;" class="green">
+                
+               </ul>
+              </div>
+            </div>
+          </div>
+          <div style="padding-top:20px" class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                Blue
+              </div>
+              <div class="card-body">
+               <ul id='data' style="padding-left: 0px!important;" class="blue">
+                
+               </ul>
+              </div>
+            </div>
+          </div>
+          <div style="padding-top:20px" class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                Original
+              </div>
+              <div class="card-body">
+               <ul id='data' style="padding-left: 0px!important; display: flex; flex-direction: row; justify-content: center;" class="or">
+                
+               </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <footer class="site-footer">
@@ -430,8 +445,45 @@
               url: "/imageprocessing",
               data: {path: r},
               success: function(r){
-                console.log("result 2",r)
-          
+                setTimeout(function(){
+                  $('.neg').html(' ');
+                  $('.neg').append(
+                   
+                   `<a style="display:flex; flex-direction:row; justify-content:center; margin-bottom: 10px" class="btn btn-primary" href=${window.location.origin + '/' + r[0]} download>Download Image</a>
+                   <img style="width:500px" with='60px' src=${window.location.origin + '/' + r[0]} >`
+                  )
+                  $('.gray').append(' ')
+                  $('.gray').append(
+                   
+                    `<a style="display:flex; flex-direction:row; justify-content:center; margin-bottom: 10px" class="btn btn-primary" href=${window.location.origin + '/' + r[1]} download>Download Image</a>
+                    <img style="width:500px" with='60px' src=${window.location.origin + '/' + r[1]} >`
+                  )
+                  $('.the').append(' ')
+                  $('.the').append(
+                    `<a style="display:flex; flex-direction:row; justify-content:center; margin-bottom: 10px" class="btn btn-primary" href=${window.location.origin + '/' + r[5]} download>Download Image</a>
+                     <img style="width:500px" with='60px' src=${window.location.origin + '/' + r[5]} >`
+                  )
+                  $('.red').append(' ')
+                  $('.red').append(
+                  `<a style="display:flex; flex-direction:row; justify-content:center; margin-bottom: 10px" class="btn btn-primary" href=${window.location.origin + '/' + r[2]} download>Download Image</a>
+                   <img style="width:500px" with='60px' src=${window.location.origin + '/' + r[2]} >`
+                  )
+                  $('.green').append(' ')
+                  $('.green').append(
+                    `<a style="display:flex; flex-direction:row; justify-content:center; margin-bottom: 10px" class="btn btn-primary" href=${window.location.origin + '/' + r[3]} download>Download Image</a> 
+                    <img style="width:500px" with='60px' src=${window.location.origin + '/' + r[3]} >`
+                  )
+                  $('.blue').append(' ')
+                  $('.blue').append(
+                    `<a style="display:flex; flex-direction:row; justify-content:center; margin-bottom: 10px" class="btn btn-primary" href=${window.location.origin + '/' + r[4]} download>Download Image</a> 
+                    <img style="width:500px" with='60px' src=${window.location.origin + '/' + r[4]} >`
+                  )
+                  $('.or').append(' ')
+                  $('.or').append(
+                    `<div><a class="btn btn-primary" href=${window.location.origin + '/' + r[6]} download>Download Image</a></div>
+                     <img style="width:500px" with='60px' src=${window.location.origin + '/' + r[6]} >`
+                  )
+                }, 2000)
               },
               error: function (e) {
                 console.log("some error", e);

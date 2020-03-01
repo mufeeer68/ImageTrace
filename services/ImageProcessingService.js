@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const pngToJpeg = require("png-to-jpeg");
 const Jimp = require("jimp");
-const gm = require("gm");
+// const gm = require("gm");
 
 export const processImage = async (req, res) => {
   try {
@@ -24,7 +24,8 @@ export const processImage = async (req, res) => {
         name + "_red" + extension,
         name + "_green" + extension,
         name + "_blue" + extension,
-        name + "_threshold" + extension
+        name + "_threshold" + extension,
+        name + extension,
       ];
       res.status(200).send(returnPaths);
       //   await convertThreshold(filePath);

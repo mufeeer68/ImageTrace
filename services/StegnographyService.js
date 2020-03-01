@@ -1,7 +1,7 @@
 const { exec } = require("child_process");
 const path = require("path");
 const fs = require("fs");
-import { clearDirectory } from "../utils/FileRemover";
+// import { clearDirectory } from "../utils/FileRemover";
 export const extract = async (req, res) => {
   try {
     let filePath = req.body.path;
