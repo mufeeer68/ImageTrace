@@ -8,6 +8,7 @@ export const processImage = async (req, res) => {
   try {
     let filePath = req.body.path;
     let extension = path.parse(filePath).ext;
+    let name = path.parse(filePath).name;
 
     if (fs.existsSync(filePath)) {
       await convertToNegative(filePath);
@@ -18,12 +19,12 @@ export const processImage = async (req, res) => {
       await convertThreshold(filePath);
 
       let returnPaths = [
-        filePath.slice(0, -extension.length) + "_negative" + extension,
-        filePath.slice(0, -extension.length) + "_greyscale" + extension,
-        filePath.slice(0, -extension.length) + "_red" + extension,
-        filePath.slice(0, -extension.length) + "_green" + extension,
-        filePath.slice(0, -extension.length) + "_blue" + extension,
-        filePath.slice(0, -extension.length) + "_threshold" + extension
+        name + "_negative" + extension,
+        name + "_greyscale" + extension,
+        name + "_red" + extension,
+        name + "_green" + extension,
+        name + "_blue" + extension,
+        name + "_threshold" + extension
       ];
       res.status(200).send(returnPaths);
       //   await convertThreshold(filePath);
