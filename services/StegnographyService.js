@@ -1,7 +1,7 @@
 const { exec } = require("child_process");
 const path = require("path");
 const fs = require("fs");
-import { clearDirectory } from "../utils/FileRemover";
+// import { clearDirectory } from "../utils/FileRemover";
 export const extract = async (req, res) => {
   try {
     let filePath = req.body.path;
@@ -13,7 +13,7 @@ export const extract = async (req, res) => {
         if (err) {
           //some err occurred
           console.error(err);
-          res.status(500).send();
+          res.status(200).send(filePath);
         } else {
           // the *entire* stdout and stderr (buffered)
           console.log(` ${stdout}`);
