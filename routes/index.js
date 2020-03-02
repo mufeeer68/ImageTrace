@@ -9,7 +9,7 @@ const routes = express.Router();
 const multer = require("multer");
 const fsExtra = require("fs-extra");
 const fs = require("fs");
-
+import { clearDirectory } from "../utils/FileRemover";
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, "./uploads");
@@ -61,5 +61,5 @@ routes.get("/exifpdf", function(req, res) {
 routes.post("/metadata", MetaDataService.getMetadata);
 routes.post("/imageprocessing", ImageProcessingService.processImage);
 routes.post("/stegnography", StegnographyService.extract);
-// routes.post("/imageprocessing", clearDirectory);
+routes.post("/stegnofinder", clearDirectory);
 module.exports = routes;

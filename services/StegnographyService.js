@@ -5,10 +5,11 @@ const fs = require("fs");
 export const extract = async (req, res) => {
   try {
     let filePath = req.body.path;
+    let script = req.body.script;
     let extension = path.parse(filePath).ext;
     let fileName = path.parse(filePath).name;
     if (fs.existsSync(filePath)) {
-      await exec("binwalk -e " + filePath, (err, stdout, stderr) => {
+      await exec(script + " -e " + filePath, (err, stdout, stderr) => {
         if (err) {
           //some err occurred
           console.error(err);
@@ -16,7 +17,7 @@ export const extract = async (req, res) => {
         } else {
           // the *entire* stdout and stderr (buffered)
           console.log(` ${stdout}`);
-          res.status(200).send();
+          res.status(200).send(filePath);
         }
       });
     }
