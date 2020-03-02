@@ -289,21 +289,21 @@ $("#ImageSubmissionForm").submit(function (e) {
               $.ajax({
                 type: "POST",
                 url: "/stegnography",
-                data: {path: r},
+                data: {path: r, script:"binwalk"},
                 success: function(r){
 
-                  $.ajax({
-                type: "POST",
-                url: "/stegnofinder",
-                data: {path: r},
-                success: function(r){
-                  console.log("result 2",r)
+              //     $.ajax({
+              //   type: "POST",
+              //   url: "/stegnofinder",
+              //   data: {path: r},
+              //   success: function(r){
+              //     console.log("result 2",r)
             
-                },
-                error: function (e) {
-                  console.log("some error", e);
-                }
-              });
+              //   },
+              //   error: function (e) {
+              //     console.log("some error", e);
+              //   }
+              // });
                 },
                 error: function (e) {
                   console.log("some error", e);
