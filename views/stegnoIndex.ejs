@@ -1,247 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Image Trace</title>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
 
-      html {
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Image Trace</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-          url(https://www.logicforce.com/wp-content/uploads/2019/03/iStock-465716918-1.jpg)
-            no-repeat;
-        background-size: cover;
-        color: black;
-        font-family: "open sans";
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
+    html {
+      margin: 0;
+      padding: 0;
+    }
+    
+    
 
-      /* ------------------------ NAVBAR ----------------*/
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url(https://www.logicforce.com/wp-content/uploads/2019/03/iStock-465716918-1.jpg) no-repeat;
+      background-size: cover;
+      color: black;
+      font-family: "open sans";
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-      header {
-        display: flex;
-        justify-content: space-between;
-        color: white;
-        background: rgba(0, 0, 0, 0.2);
-      }
+    /* ------------------------ NAVBAR ----------------*/
 
-      header div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-family: Pacifico;
-        margin: 0 2rem;
-      }
+    header {
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      background: rgba(0, 0, 0, 0.2);
+    }
 
-      header div i {
-        font-size: 2rem;
-        margin: 1rem;
-      }
+    header div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Pacifico;
+      margin: 0 2rem;
+    }
 
-      header nav {
-        padding: 1rem 2rem;
-      }
+    header div i {
+      font-size: 2rem;
+      margin: 1rem;
+    }
 
-      nav ul li {
-        list-style: none;
-        display: inline;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 5px;
-      }
+    header nav {
+      padding: 1rem 2rem;
+    }
 
-      nav li a {
-        padding: 1rem;
-        margin: 1rem;
-        text-decoration: none;
-        color: white;
-        transition: all 250ms ease-in;
-      }
+    nav ul li {
+      list-style: none;
+      display: inline;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 5px;
+    }
 
-      nav li a:hover {
-        background: rgba(255, 255, 255, 0.3);
-        color: black;
-      }
+    nav li a {
+      padding: 1rem;
+      margin: 1rem;
+      text-decoration: none;
+      color: white;
+      transition: all 250ms ease-in;
+    }
 
-      /* ------------------------ TOP SECTION ----------------*/
+    nav li a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: black;
+    }
 
-      .titles {
-        color: white;
-        text-align: center;
-        width: 50vw;
-        margin: 0 auto;
-      }
+    /* ------------------------ TOP SECTION ----------------*/
 
-      .titles h1 {
-        font-family: Pacifico;
-        font-size: 5rem;
-        margin-bottom: 0;
-        text-shadow: 1px 1px 0 black;
-      }
+    .titles {
+      color: white;
+      text-align: center;
+      width: 50vw;
+      margin: 0 auto;
+    }
 
-      .titles p {
-        letter-spacing: 3px;
-        text-shadow: 1px 1px 0 black;
-      }
+    .titles h1 {
+      font-family: Pacifico;
+      font-size: 5rem;
+      margin-bottom: 0;
+      text-shadow: 1px 1px 0 black;
+    }
 
-      /* ------------------------ BOT SECTION ----------------*/
+    .titles p {
+      letter-spacing: 3px;
+      text-shadow: 1px 1px 0 black;
+    }
 
-      .container-boxes {
-        margin: 0 auto;
-        padding: 0;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-        max-width: 80vw;
-      }
+    /* ------------------------ BOT SECTION ----------------*/
 
-      .box {
-        background: rgba(255, 255, 255, 0.7);
-        margin: 1rem;
-        padding: 0.5rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 1000px!important;
-        transition: all 250ms ease-out;
-        height: 130px;
-      }
 
-      .box:hover {
-        background: rgba(255, 255, 255, 0.9);
-        transform: translateY(-20%);
-      }
+    @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
 
-      .box a {
-        text-decoration: none;
-        color: black;
-      }
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
+
+.loader {
+  position: relative;
+  margin: auto;
+  width: 350px;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 250%;
+  background: linear-gradient(180deg, #222 0, #444 100%);
+  box-shadow: inset 0 5px 20px black;
+  text-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+
+.loader:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+span.hello {
+  float: left;
+  height: 100px;
+  line-height: 120px;
+  width: 50px;
+}
+
+.loader > span.hello {
+  border-left: 1px solid #444;
+  border-right: 1px solid #222;
+}
+
+.covers {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.covers span.hello {
+  background: linear-gradient(180deg, white 0, #ddd 100%);
+  animation: up 2s infinite;
+}
+
+@keyframes up {
+  0%   { margin-bottom: 0; }
+  16%  { margin-bottom: 100%; height: 20px; }
+  50% { margin-bottom: 0; }
+  100% { margin-bottom: 0; }
+}
+
+.covers span:nth-child(2) { animation-delay: .142857s; }
+.covers span:nth-child(3) { animation-delay: .285714s; }
+.covers span:nth-child(4) { animation-delay: .428571s; }
+.covers span:nth-child(5) { animation-delay: .571428s; }
+.covers span:nth-child(6) { animation-delay: .714285s; }
+.covers span:nth-child(7) { animation-delay: .857142s; }
+
+
+
+    .container-boxes {
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      max-width: 80vw;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.7);
+      margin: 1rem;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 1000px !important;
+      transition: all 250ms ease-out;
+      height: 130px;
+    }
+
+    .box:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-20%);
+    }
+
+    .box a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .icon {
+      font-size: 3rem;
+      padding: 1rem;
+    }
+
+    .text h3 {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 0;
+    }
+
+    .text p {
+      margin-top: 1rem;
+      line-height: 1.5rem;
+      text-align: left;
+    }
+
+    .text {
+      padding: 0.5rem;
+    }
+
+    /* MEDIAQUERIES */
+
+    @media (max-width: 1160px) {
       .icon {
-        font-size: 3rem;
-        padding: 1rem;
+        font-size: 2rem;
+        padding: 0.5rem;
       }
 
       .text h3 {
         text-transform: uppercase;
         letter-spacing: 4px;
         margin-bottom: 0;
+        font-size: 1rem;
       }
 
       .text p {
         margin-top: 1rem;
         line-height: 1.5rem;
         text-align: left;
+        font-size: 0.8rem;
       }
 
-      .text {
-        padding: 0.5rem;
+      nav li a:hover {
+        background: none;
+        color: black;
+      }
+    }
+
+    @media (max-width: 850px) {
+      body {
+        height: 100%;
       }
 
-      /* MEDIAQUERIES */
-
-      @media (max-width: 1160px) {
-        .icon {
-          font-size: 2rem;
-          padding: 0.5rem;
-        }
-        .text h3 {
-          text-transform: uppercase;
-          letter-spacing: 4px;
-          margin-bottom: 0;
-          font-size: 1rem;
-        }
-
-        .text p {
-          margin-top: 1rem;
-          line-height: 1.5rem;
-          text-align: left;
-          font-size: 0.8rem;
-        }
-        nav li a:hover {
-          background: none;
-          color: black;
-        }
+      .container-boxes {
+        flex-direction: column;
       }
 
-      @media (max-width: 850px) {
-        body {
-          height: 100%;
-        }
-        .container-boxes {
-          flex-direction: column;
-        }
-        .box:hover {
-          background: rgba(255, 255, 255, 0.7);
-          transform: none;
-        }
-        .titles h1 {
-          font-size: 3rem;
-        }
+      .box:hover {
+        background: rgba(255, 255, 255, 0.7);
+        transform: none;
       }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    />
-  </head>
 
-  <body>
-    <header>
-      <div>
-        <i class="fas fa-atom"></i>
-      </div>
-      <nav>
-        <ul>
-            <li><a href="/">Data Extraction</a></li>
-            <li><a href="/ela">Image Processing</a></li>
-            <li><a href="/stegno">Stegnography</a></li>
-        </ul>
-      </nav>
-    </header>
+      .titles h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+</head>
 
-    <section class="titles">
-      <h1>IMAGE TRACE</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam maiores
-        consectetur, laboriosam rerum obcaecati.
-      </p>
-    </section>
+<body style="bgcolor: teal!important;">
+<div id="to-hide" class="to-hide">
+  <header>
+    <div>
+      <i class="fas fa-atom"></i>
+    </div>
+    <nav>
+      <ul>
+          <li><a href="/">MetaData Extractor</a></li>
+          <li><a href="/ela">Error Level Analysis</a></li>
+          <li><a href="/stegno">Stegnography</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section style="padding: 50px; width: 100%; margin-bottom: 60px; padding-top: 0px!important"  class="container-boxes">
-      <div class="box">
-        <form id="ImageSubmissionForm" enctype="multipart/form-data">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span style="" class="input-group-text"></span>
-            </div>
-            <div style="width: 992px; margin-right: 5px;" class="custom-file">
-              <input
-                style="width: 755px;"
-                type="file"
-                class="custom-file-input"
-                id="inputGroupFile01"
-                name="image"
-              />
-              <label style="margin-right: 8px;" class="custom-file-label" for="inputGroupFile01"
-                >Choose file</label
-              >
-            </div>
-            <!-- <div class="col-md-12">
+  
+  <section class="titles">
+    <h1>IMAGE TRACE</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam maiores
+      consectetur, laboriosam rerum obcaecati.
+    </p>
+  </section>
+</div>
+
+
+ <div id="to-hide" class="to-hide">
+  <section style="padding: 50px; width: 100%; margin-bottom: 60px; padding-top: 0px!important" class="container-boxes">
+    <div class="box">
+      <form id="ImageSubmissionForm" enctype="multipart/form-data">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span style="" class="input-group-text"></span>
+          </div>
+          <div style="width: 992px; margin-right: 5px;" class="custom-file">
+            <input style="width: 755px;" type="file" class="custom-file-input" id="inputGroupFile01" name="image" />
+            <label style="margin-right: 8px;" class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          </div>
+          <!-- <div class="col-md-12">
               <div style="padding: 20px;" class="form-check">
                 <input name="stegnography" type="checkbox" class="form-check-input" id="stegnography">
                 <label style="color: black;" id='stegnography' class="form-check-label" for="exampleCheck1">Stegnography</label>
@@ -254,68 +321,161 @@
                 <input name="extraction" type="checkbox" class="form-check-input" id="dataExtraction">
                 <label style="color: black;" class="form-check-label" for="exampleCheck1">Data Extraction With Location</label>
               </div> -->
+        </div>
+        <div style="display: flex; flex-direction: row; justify-content: center; align-content: center;">
+          <button type="submit" id="enter" style="margin-left: 15px;" class="btn btn-primary"
+            value="Process">Submit</button>
+        </div>
+    </div>
+    </form>
+    </div>
+    </div>
+  </section>
+</div>
+
+  <div style="display: none;" class="loader">
+      <span class="hello">L</span>
+      <span class="hello">O</span>
+      <span class="hello">A</span>
+      <span class="hello">D</span>
+      <span class="hello">I</span>
+      <span class="hello">N</span>
+      <span class="hello">G</span>
+      
+      <div style="display: none;" class="covers">
+        <span class="hello"></span>
+        <span class="hello"></span>
+        <span class="hello"></span>
+        <span class="hello"></span>
+        <span class="hello"></span>
+        <span class="hello"></span>
+        <span class="hello"></span>
+      </div>
+    </div>
+<div id="to-hide" class="to-hide">
+  <div style="background-color: white; padding: 30px;" class="site-section">
+    <div class="container">
+      <div class="row align-items-stretch">
+
+         <div style="padding-top: 20px;" class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              Extracted File
             </div>
-            <div style="display: flex; flex-direction: row; justify-content: center; align-content: center;">
-              <button type="submit" id ="enter" style="margin-left: 15px;" class="btn btn-primary" value="Process" >Submit</button>
+            <div class="card-body">
+             <ul id='data' style="padding-left: 0px!important;" class="imageButton">
+              
+             </ul>
             </div>
           </div>
-        </form>
+         </div> 
+         <div style="padding-top: 20px;" class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                Extracted Text
+              </div>
+              <div class="card-body">
+                  <ul id='data' style="padding-left: 0px!important;" class="imageText">
+                    
+                  </ul>
+              </div>
+            </div>
+           </div> 
       </div>
-      </div>
-    </section>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script>
-        $('#inputGroupFile01').on('change',function(){
-            var fileName = $(this).val();
-            $(this).next('.custom-file-label').html(fileName);
-        });
-    </script>
-    <script type="text/javascript">
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script>
+    $('#inputGroupFile01').on('change', function () {
+      var fileName = $(this).val();
+      $(this).next('.custom-file-label').html(fileName);
+    });
+  </script>
+  <script type="text/javascript">
 
-$("#ImageSubmissionForm").submit(function (e) {
+    $("#ImageSubmissionForm").submit(function (e) {
       e.preventDefault();
       var formData = new FormData(this);
       $.ajax({
-          type: "POST",
-          url: "/submit",
-          data: formData,
-          processData: false,
-          contentType: false,
-          success: function(r){
+        type: "POST",
+        url: "/submit",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (r) {
+          $.ajax({
+            type: "POST",
+            url: "/stegnography",
+            data: { path: r, script: "binwalk" },
+            success: function (r) {
               $.ajax({
                 type: "POST",
-                url: "/stegnography",
-                data: {path: r, script:"binwalk"},
-                success: function(r){
+                url: "/stegnofinder",
+                data: { path: r },
+                success: function (r) {
+                  $('.loader').css({display: 'block'});
+                  $('.covers').css({display: 'block'});
+                  $('body').css({background: 'none'});
+                  // $('div#to-hide').css({display: 'none'});
+                  setTimeout(function(){
+                    const output = r.file.map(cur => ({
+                    file: cur.file,
+                    text: r.text ? r.text : null,
+                  }))
+                  $('.imageButton').html(' ')
+                  if (r.file.length > 0) {
+                    $.each(output, function(key, value){
+                      console.log(window.location.origin +'/'+value.file)
+                      $(".imageButton").append(
+                        `<a style="margin-top:20px" class="btn btn-primary" href=${window.location.origin +'/'+value.file} download>Download Embedded File</a> <br>`
+                      )
+                    });
+                  } else {
+                    $('.imageButton').append(
+                      '<p style="color: red;background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">' + 'Sorry No Data Found' + '</p>',
+                    )
+                  }
 
-              //     $.ajax({
-              //   type: "POST",
-              //   url: "/stegnofinder",
-              //   data: {path: r},
-              //   success: function(r){
-              //     console.log("result 2",r)
-            
-              //   },
-              //   error: function (e) {
-              //     console.log("some error", e);
-              //   }
-              // });
+                  $('.imageText').html(' ')
+                  if (r.text) {
+                    console.log('hello')
+                    $('.imageText').append(
+                      `<p>${r.text}</p>`
+                    )
+                  } else {
+                    $('.imageText').append(
+                      '<p style="color: red;background-color: #f9f9f9; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; padding:10px; border-top: 1px solid #dee2e6;">' + 'Sorry No Data Found' + '</p>',
+                    )
+                  }
+
+                  $('.loader').css({display: 'none'});
+                  $('.covers').css({display: 'none'});
+                  $('div#to-hide').css({display: 'block'});
+                  $('body').css({background:
+                    'linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://www.logicforce.com/wp-content/uploads/2019/03/iStock-465716918-1.jpg) no-repeat',
+                    backgroundSize: 'cover'
+                   });
+                  }, 3000)
                 },
                 error: function (e) {
-                  console.log("some error", e);
+                  $('')
                 }
               });
             },
-          error: function (e) {
-            console.log("some error", e);
-          }
+            error: function (e) {
+              console.log("some error", e);
+            }
+          });
+        },
+        error: function (e) {
+          console.log("some error", e);
+        }
       });
 
-});
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

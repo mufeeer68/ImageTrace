@@ -13,7 +13,7 @@ export const extract = async (req, res) => {
         if (err) {
           //some err occurred
           console.error(err);
-          res.status(500).send();
+          res.status(200).send(filePath);
         } else {
           // the *entire* stdout and stderr (buffered)
           console.log(` ${stdout}`);
