@@ -8,6 +8,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("uploads"));
 
 app.use(routes);
-app.listen(5000, function() {
-  console.log("Example app listening on port 3000!");
+app.listen(4000, function () {
+  console.log("Example app listening on port 4000!");
 });

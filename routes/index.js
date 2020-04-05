@@ -22,18 +22,18 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 routes.get("/", function(req, res) {
-  // fsExtra.emptyDirSync("uploads");
+  fsExtra.emptyDirSync("uploads");
 
   res.render("index");
 });
 
 routes.get("/ela", function(req, res) {
-  // fsExtra.emptyDirSync("uploads");
+  fsExtra.emptyDirSync("uploads");
   res.render("elaIndex");
 });
 
 routes.get("/stegno", function(req, res) {
-  // fsExtra.emptyDirSync("uploads");
+  fsExtra.emptyDirSync("uploads");
   res.render("stegnoIndex");
 });
 
