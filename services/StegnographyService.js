@@ -16,7 +16,7 @@ export const extract = async (req, res) => {
           res.status(500).send(err);
         } else {
           // the *entire* stdout and stderr (buffered)
-          console.log(` ${stdout}`);
+          console.log(`File detected`);
           res.status(200).send(filePath);
         }
       });

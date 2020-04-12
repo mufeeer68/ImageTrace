@@ -2,7 +2,7 @@ const ExifImage = require("exif").ExifImage;
 const fs = require("fs");
 const path = require("path");
 const pngToJpeg = require("png-to-jpeg");
-import { pdfsaver } from "./../utils/PdfSaver";
+import { pdfsaver } from "../utils/PdfSaver";
 export const getMetadata = async (req, res) => {
   try {
     // console.log(req);
@@ -11,7 +11,7 @@ export const getMetadata = async (req, res) => {
       if (path.parse(filePath).ext == ".png") {
         filePath = await convert(filePath);
       }
-      new ExifImage({ image: filePath }, function(error, exifData) {
+      new ExifImage({ image: filePath }, function (error, exifData) {
         if (error) {
           res.status(500).send(error.message);
         }
@@ -28,11 +28,11 @@ export const getMetadata = async (req, res) => {
   }
 };
 
-const convert = async filePath => {
+const convert = async (filePath) => {
   let buffer = fs.readFileSync(filePath);
   filePath = filePath.slice(0, -3) + "jpeg";
   try {
-    await pngToJpeg({ quality: 90 })(buffer).then(output =>
+    await pngToJpeg({ quality: 90 })(buffer).then((output) =>
       fs.writeFileSync(filePath, output)
     );
   } catch (err) {
